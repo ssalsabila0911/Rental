@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DaftarActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppinsextra"
+        android:gravity="center"
+        android:text="Daftar Akun !"
+        android:textColor="@color/primary"
+        android:textSize="16pt" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selamat Bergabung Bersama Kami"
+        android:gravity="center"
+        android:fontFamily="@font/poppinsregular"
+        android:textSize="8pt"
+        android:textColor="@color/primary" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/daftarEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/email"
+            android:hint="Email"
+            android:paddingLeft="8dp"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingTop="4dp"/>
+        <EditText
+            android:id="@+id/daftarNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nama"
+            android:hint="Nama Lengkap"
+            android:paddingLeft="8dp"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingTop="4dp"/>
+
+        <EditText
+            android:id="@+id/daftarNohp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/telp"
+            android:hint="Nomor Ponsel"
+            android:paddingLeft="8dp"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingTop="4dp"/>
+
+        <EditText
+            android:id="@+id/daftarPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/password"
+            android:hint="Password"
+            android:paddingLeft="8dp"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnDaftar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary"
+            android:layout_marginTop="20dp"
+            android:text="Daftar"
+            android:fontFamily="@font/poppinssemibold"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah Punya Akun?"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/primary"/>
+
+            <TextView
+                android:id="@+id/btnMasuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Masuk"
+                android:textColor="@color/primary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
