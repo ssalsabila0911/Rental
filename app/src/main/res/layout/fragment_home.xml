@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -18,40 +19,50 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:background="@color/primary"
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="85dp">
+                android:layout_height="60dp"
+                android:background="@color/primary"
+                android:baselineAligned="false">
+
+                <include layout="@layout/main_toolbar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/primary">
 
                 <TextView
                     android:layout_width="397dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppinssemibold"
                     android:padding="10dp"
-                    android:layout_marginTop="15dp"
+
                     android:text="Temukan\nMotor favorite anda!"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </LinearLayout>
-        <LinearLayout
-            android:background="@drawable/header"
-            android:layout_width="match_parent"
-            android:layout_height="75dp">
-            <include layout="@layout/main_search"/>
-        </LinearLayout>
-
+            <LinearLayout
+                android:background="@drawable/header"
+                android:layout_width="match_parent"
+                android:layout_height="130dp">
+                <include layout="@layout/main_search"/>
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="262dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="80dp"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/splash"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -86,8 +97,9 @@
                     android:layout_height="match_parent" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -122,8 +134,10 @@
                     android:layout_height="match_parent" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="25dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -192,7 +206,8 @@
                 android:text="Pilih promo menarik sebelum kehabisan"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
-            <include layout="@layout/main_promo"/>
+
+            <include layout="@layout/main_promo" />
 
 
         </LinearLayout>

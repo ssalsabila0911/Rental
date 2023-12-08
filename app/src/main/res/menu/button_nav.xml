@@ -4,21 +4,17 @@
     <item
         android:title="Home"
         android:id="@+id/home"
-        android:icon="@drawable/home"
-        android:iconTintMode="@color/primary"/>
+        android:icon="@drawable/home" />
     <item
         android:title="Favorite"
         android:id="@+id/favorite"
-        android:icon="@drawable/like"
-        android:iconTintMode="@color/primary"/>
+        android:icon="@drawable/like" />
     <item
         android:title="Order"
         android:id="@+id/order"
-        android:icon="@drawable/order"
-        android:iconTintMode="@color/primary"/>
+        android:icon="@drawable/order" />
     <item
         android:title="Akun"
         android:id="@+id/akun"
-        android:icon="@drawable/akun"
-        android:iconTintMode="@color/primary"/>
+        android:icon="@drawable/akun" />
 </menu>
