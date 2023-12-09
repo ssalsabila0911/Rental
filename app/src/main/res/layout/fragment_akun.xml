@@ -1,28 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AkunFragment">
+    tools:context=".AkunFragment"
+    android:background="@color/white">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="vertical"
-        android:background="@color/primary">
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Akun"
-            android:textSize="20sp"
-            android:fontFamily="@font/poppinssemibold"
-            android:textColor="@color/white"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
-    </LinearLayout>
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:ignore="UselessParent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="180dp"
+              android:orientation="vertical"
+              android:background="@color/blue">
+              <TextView
+                  android:layout_marginTop="20dp"
+                  android:layout_marginStart="15dp"
+                  android:layout_marginEnd="15dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Profil"
+                  android:gravity="center"
+                  android:textSize="25sp"
+                  android:fontFamily="@font/poppinssemibold"
+                  android:textColor="@color/black"
+                  tools:ignore="HardcodedText" />
+
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="148dp"
+              android:layout_marginTop="-100dp"
+              android:background="@drawable/bg_profil"
+              android:orientation="vertical">
+
+              <de.hdodenhof.circleimageview.CircleImageView
+                  android:layout_width="70dp"
+                  android:layout_height="70dp"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="10dp"
+                  android:src="@drawable/foto"
+                  tools:ignore="MissingClass" />
+
+              <TextView
+                  android:id="@+id/textView"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:fontFamily="@font/poppinssemibold"
+                  android:text="Dina"
+                  android:textColor="@color/black"
+                  android:textSize="20sp"
+                  tools:ignore="HardcodedText" />
+
+              <TextView
+                  android:id="@+id/textView2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:text="dina@gmail.com"
+                  android:textColor="@color/black"
+                  tools:ignore="HardcodedText" />
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_marginTop="20dp"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:layout_weight="1"
+              tools:ignore="InefficientWeight">
+
+              <LinearLayout
+                  android:id="@+id/tV_akun"
+                  android:padding="5dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp">
+                  <de.hdodenhof.circleimageview.CircleImageView
+                      android:src="@drawable/person"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginStart="20dp"
+                      tools:ignore="MissingClass" />
+                  <TextView
+                      android:layout_weight="1"
+                      android:layout_marginStart="10dp"
+                      android:textColor="@color/black"
+                      android:fontFamily="@font/poppinssemibold"
+                      android:text="@string/pengaturan_akun"
+                      android:textSize="15sp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+
+              </LinearLayout>
+              <LinearLayout
+                  android:id="@+id/tV_keamanan"
+                  android:padding="5dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp">
+                  <de.hdodenhof.circleimageview.CircleImageView
+                      android:src="@drawable/security"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginStart="20dp"
+                      tools:ignore="MissingClass" />
+                  <TextView
+                      android:layout_weight="1"
+                      android:textColor="@color/black"
+                      android:layout_marginStart="10dp"
+                      android:fontFamily="@font/poppinssemibold"
+                      android:text="Pengaturan Keamanan"
+                      android:textSize="15sp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      tools:ignore="HardcodedText" />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:id="@+id/tV_bantuan"
+                  android:padding="5dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp">
+                  <de.hdodenhof.circleimageview.CircleImageView
+                      android:src="@drawable/help"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginStart="20dp"
+                      tools:ignore="MissingClass" />
+                  <TextView
+                      android:layout_weight="1"
+                      android:layout_marginStart="10dp"
+                      android:textColor="@color/black"
+                      android:fontFamily="@font/poppinssemibold"
+                      android:text="Pusat Bantuan"
+                      android:textSize="15sp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      tools:ignore="HardcodedText" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/tV_Sk"
+                  android:padding="5dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp">
+                  <de.hdodenhof.circleimageview.CircleImageView
+                      android:src="@drawable/snk"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginStart="20dp"
+                      tools:ignore="MissingClass" />
+                  <TextView
+                      android:layout_weight="1"
+                      android:layout_marginStart="10dp"
+                      android:textColor="@color/black"
+                      android:fontFamily="@font/poppinssemibold"
+                      android:text="Syarat dan ketentuan"
+                      android:textSize="15sp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      tools:ignore="HardcodedText" />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:id="@+id/tV_keluar"
+                  android:padding="5dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp">
+                  <de.hdodenhof.circleimageview.CircleImageView
+                      android:src="@drawable/logout"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginStart="20dp"
+                      tools:ignore="MissingClass" />
+                  <TextView
+                      android:layout_weight="1"
+                      android:layout_marginStart="10dp"
+                      android:textColor="@color/black"
+                      android:fontFamily="@font/poppinssemibold"
+                      android:text="Keluar"
+                      android:textSize="15sp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      tools:ignore="HardcodedText" />
+
+              </LinearLayout>
+          </LinearLayout>
+
+      </LinearLayout>
+
+  </ScrollView>
 
 </FrameLayout>

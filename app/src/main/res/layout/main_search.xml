@@ -9,18 +9,20 @@
     android:gravity="center_horizontal|center_vertical">
 
     <EditText
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        android:ems="10"
         android:backgroundTint="#F9F9F9"
         android:background="@drawable/bg_search"
         android:drawableEnd="@drawable/search"
         android:hint="Cari Motor..."
+        android:textColorHint="#4E4848"
+        android:inputType="text"
         android:textColor="@color/black"
-        android:padding="20dp" />
+        android:padding="15dp" />
 
 
 </LinearLayout>

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="#D2FFFFFF">
 
 
     <FrameLayout
@@ -17,15 +17,17 @@
 
     </FrameLayout>
     <LinearLayout
-        android:layout_marginTop="-60dp"
+        android:layout_marginTop="-75dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/buttonNav"
             app:menu="@menu/button_nav"
             android:background="@drawable/bg_menu_nav"
-            android:layout_width="400dp"
-            android:layout_height="67dp" />
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
     </LinearLayout>
 
 
