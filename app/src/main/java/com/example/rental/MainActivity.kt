@@ -20,7 +20,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ganti baris ini menjadi setOnNavigationItemSelectedListener
+
+    }
+
+    private fun replaceFragment(fragment: Fragment) { // Ganti baris ini menjadi setOnNavigationItemSelectedListener
         binding.buttonNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
@@ -36,9 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         // Pindahkan baris ini ke luar blok setOnNavigationItemSelectedListener
         replaceFragment(HomeFragment())
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
