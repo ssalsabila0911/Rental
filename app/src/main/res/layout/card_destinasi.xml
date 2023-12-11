@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="250dp">
 
         <ImageView
             android:id="@+id/imageDes"
@@ -50,6 +50,19 @@
             android:paddingBottom="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageDes" />
+
+        <Button
+            android:id="@+id/btn_more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="More"
+            android:backgroundTint="@color/primary"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DeskripsiDes" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

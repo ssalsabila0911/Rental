@@ -1,10 +1,12 @@
 package com.example.rental
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,24 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val menuMotor:ImageView = view.findViewById(R.id.btnMotor)
+        val menuDes:ImageView = view.findViewById(R.id.btnDes)
+
+        menuMotor.setOnClickListener {
+            requireActivity().run {
+                startActivity(Intent(this, ListMotorActivity::class.java))
+                finish()
+            }
+        }
+
+        menuDes.setOnClickListener {
+            requireActivity().run {
+                startActivity(Intent(this,DesListActivity::class.java))
+            }
+        }
+
+        return view
     }
 
     companion object {

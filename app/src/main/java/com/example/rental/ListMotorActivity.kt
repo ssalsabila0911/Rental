@@ -1,13 +1,9 @@
 package com.example.rental
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rental.AdapterMotor
-import com.example.rental.MotorModel
-import com.example.rental.R
 
 class ListMotorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +24,8 @@ class ListMotorActivity : AppCompatActivity() {
         val adapter = AdapterMotor(data)
         //set adapter ke recyclerView
         rvMotor.adapter = adapter
+
+
     }
 
 }
