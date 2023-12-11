@@ -50,6 +50,7 @@ class HomeFragment : Fragment() {
         menuDes.setOnClickListener {
             requireActivity().run {
                 startActivity(Intent(this,DesListActivity::class.java))
+                finish()
             }
         }
 
