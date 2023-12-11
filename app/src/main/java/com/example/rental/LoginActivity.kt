@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
             val result:Boolean = dbHelper.checkLogin(email,password)
             if (result == true){
                 Toast.makeText(this@LoginActivity, "Login Berhasil", Toast.LENGTH_SHORT).show()
-                val intentLogin = Intent(this@LoginActivity, HomeFragment::class.java)
+                val intentLogin = Intent(this@LoginActivity, MainActivity::class.java)
                 startActivity(intentLogin)
             } else{
                 Toast.makeText(this, "Login Gagal. Silakan Login Kembali !!", Toast.LENGTH_SHORT).show()
