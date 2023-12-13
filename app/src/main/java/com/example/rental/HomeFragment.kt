@@ -39,18 +39,25 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         val menuMotor:ImageView = view.findViewById(R.id.btnMotor)
         val menuDes:ImageView = view.findViewById(R.id.btnDes)
+        val menuMaps:ImageView = view.findViewById(R.id.btnPeta)
 
         menuMotor.setOnClickListener {
             requireActivity().run {
                 startActivity(Intent(this, ListMotorActivity::class.java))
-                finish()
+
             }
         }
 
         menuDes.setOnClickListener {
             requireActivity().run {
                 startActivity(Intent(this,DesListActivity::class.java))
-                finish()
+
+            }
+        }
+
+        menuMaps.setOnClickListener {
+            requireActivity().run {
+                startActivity(Intent(this,MapsActivity::class.java))
             }
         }
 

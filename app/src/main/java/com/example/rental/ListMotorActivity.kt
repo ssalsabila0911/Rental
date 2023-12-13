@@ -1,6 +1,8 @@
 package com.example.rental
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +13,7 @@ class ListMotorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list_motor)
         //instance
         val rvMotor:RecyclerView = findViewById(R.id.recyclerViewMotor)
+        val btnBack:ImageView = findViewById(R.id.btnKembali)
         //set layout manager di RecyclerView
         rvMotor.layoutManager = LinearLayoutManager(this)
         //list data motor
@@ -26,6 +29,11 @@ class ListMotorActivity : AppCompatActivity() {
         rvMotor.adapter = adapter
 
 
+        //setelah btn back di klik
+        btnBack.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

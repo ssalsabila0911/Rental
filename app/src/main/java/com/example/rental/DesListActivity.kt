@@ -1,12 +1,11 @@
 package com.example.rental
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rental.AdapterDes
-import com.example.rental.DesModel
-import com.example.rental.R
 
 class DesListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +14,7 @@ class DesListActivity : AppCompatActivity() {
 
         //instance
         val rvDes:RecyclerView = findViewById(R.id.recyclerViewDestinasi)
+        val btnBack:ImageView = findViewById(R.id.btnKembali)
         //set layout manager di recycler view
         rvDes.layoutManager = LinearLayoutManager(this)
         //list data destinasi
@@ -30,5 +30,11 @@ class DesListActivity : AppCompatActivity() {
         val adapter = AdapterDes(data)
         //set adapter ke recyclerview
         rvDes.adapter = adapter
+
+        //saat diklik kembali
+        btnBack.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
