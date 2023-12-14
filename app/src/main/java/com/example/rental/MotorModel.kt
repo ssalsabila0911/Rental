@@ -1,3 +1,8 @@
 package com.example.rental
 
-data class MotorModel(val image:Int, val title:String, val desc:String)
+data class MotorModel(val nostnk: String,
+                      val nomesin: String,
+                      val merktipe: String,
+                      val tahun: String,
+                      val kondisi: String,
+                      val gambar: ByteArray?)

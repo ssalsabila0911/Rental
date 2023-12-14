@@ -18,6 +18,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //hide title bar
         getSupportActionBar()?.hide()
 
         //instance text
@@ -33,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val dbHelper = DatabaseHelper(this)
 
-            //check data
+            /*check data
             val data:String = dbHelper.checkData("syifa@gmail.com")
             Toast.makeText(this@LoginActivity, "Hasil : " + data, Toast.LENGTH_SHORT).show()
             if (data== ""){
@@ -42,9 +43,9 @@ class LoginActivity : AppCompatActivity() {
             }
             val email = txtEmail.text.toString().trim()
             val password = txtPassword.text.toString().trim()
-
+            */
             //cek login
-            val result:Boolean = dbHelper.checkLogin(email,password)
+            val result:Boolean = dbHelper.checkLogin(txtEmail.text.toString(),txtPassword.text.toString())
             if (result == true){
                 Toast.makeText(this@LoginActivity, "Login Berhasil", Toast.LENGTH_SHORT).show()
                 val intentLogin = Intent(this@LoginActivity, MainActivity::class.java)
