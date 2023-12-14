@@ -21,6 +21,11 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1">
+            <TextView
+                android:id="@+id/textNoStnk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"/>
             <ImageView
                 android:id="@+id/imageViewMotor"
                 android:layout_width="130dp"

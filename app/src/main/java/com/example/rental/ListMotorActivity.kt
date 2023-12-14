@@ -17,14 +17,12 @@ class ListMotorActivity : AppCompatActivity() {
         //set layout manager di RecyclerView
         rvMotor.layoutManager = LinearLayoutManager(this)
         //list data motor
-        val data = ArrayList<MotorModel>()
-        data.add(MotorModel(R.drawable.m1,"Vespa Biru","Lorem Ipsum Dolor Sit Amet"))
-        data.add(MotorModel(R.drawable.m2,"Vespa Hijau","Lorem Ipsum Dolor Sit Amet"))
-        data.add(MotorModel(R.drawable.m3,"Vespa Tosca","Lorem Ipsum Dolor Sit Amet"))
-        data.add(MotorModel(R.drawable.m4,"Vespa Merah","Lorem Ipsum Dolor Sit Amet"))
-        data.add(MotorModel(R.drawable.m5,"Vespa Kuning","Lorem Ipsum Dolor Sit Amet"))
+
+        val dbhelper = DatabaseHelper(this)
+        val dataMotor = dbhelper.showMotor()
+
         //set adapter
-        val adapter = AdapterMotor(data)
+        val adapter = AdapterMotor(dataMotor)
         //set adapter ke recyclerView
         rvMotor.adapter = adapter
 
