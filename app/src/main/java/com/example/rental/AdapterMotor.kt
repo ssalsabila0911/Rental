@@ -23,7 +23,6 @@ class AdapterMotor(private val listMotor:List<MotorModel>): RecyclerView.Adapter
             val image:String = data.gambar
             val title:String = data.merktipe
             val desc:String = data.kondisi + " - " + data.tahun + " - " + data.harga
-
         }
     }
 
