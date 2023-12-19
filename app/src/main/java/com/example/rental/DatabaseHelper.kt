@@ -13,9 +13,9 @@ class DatabaseHelper(var context: Context) : SQLiteOpenHelper(context, DATABASE_
 {
 companion object{
     private val DATABASE_NAME = "rentalmotor"
-    private val DATABASE_VERSION = 1
+    private val DATABASE_VERSION = 3
 
-    //tabel akun
+    //tabel akunya
     private val TABLE_ACCOUNT = "akun"
     //kolom tabel akun
     private val COLUMN_EMAIL = "email"
@@ -33,6 +33,7 @@ companion object{
     private val COLUMN_HARGA = "harga"
     private val COLUMN_GAMBAR_MOTOR = "gambar"
 
+
 }//CREATE
 //tabel akun
 private val CREATE_AKUN_TABLE = ("CREATE TABLE " + TABLE_ACCOUNT + "(" + COLUMN_EMAIL + " TEXT PRIMARY KEY, "+ COLUMN_NAMA +" TEXT, "+ COLUMN_NOHP + " TEXT, "+ COLUMN_PASSWORD +" TEXT)")
@@ -45,13 +46,22 @@ private val DROP_AKUN_TABLE = "DROP TABLE IF EXISTS $TABLE_ACCOUNT"
 private  val DROP_MOTOR_TABLE = "DROP TABLE IF EXISTS $TABLE_MOTOR"
 
 
+
 //INSERT
-private val INSERT_MOTOR1 = ("INSERT INTO $TABLE_MOTOR VALUES ('AB 2991 CD', '753641', 'Honda Beat', '2021', 'Baik', '80000','m1.png')")
+private val INSERT_MOTOR1 = ("INSERT INTO $TABLE_MOTOR VALUES ('AB 2991 CD', '753641', 'Honda Beat', '2021', 'Baik', '80000','m1')")
+    private val INSERT_MOTOR2 = ("INSERT INTO $TABLE_MOTOR VALUES ('AB 2981 DE', '756342', 'Honda Vario', '2022', 'Baik', '90000','m2')")
+    private val INSERT_MOTOR3 = ("INSERT INTO $TABLE_MOTOR VALUES ('AB 2971 EF', '756343', 'Honda Scoopy', '2020', 'Baik', '85000','m3')")
+    private val INSERT_MOTOR4 = ("INSERT INTO $TABLE_MOTOR VALUES ('AB 2961 GH', '756344', 'Yamaha Mio', '2019', 'Baik', '75000','m4')")
+    private val INSERT_MOTOR5 = ("INSERT INTO $TABLE_MOTOR VALUES ('AB 2951 IJ', '756345', 'Yamaha Filano', '2023', 'Baik', '90000','m5')")
 
 override fun onCreate(p0: SQLiteDatabase?) {
     p0?.execSQL(CREATE_AKUN_TABLE)
     p0?.execSQL(CREATE_MOTOR_TABLE)
     p0?.execSQL(INSERT_MOTOR1)
+    p0?.execSQL(INSERT_MOTOR2)
+    p0?.execSQL(INSERT_MOTOR3)
+    p0?.execSQL(INSERT_MOTOR4)
+    p0?.execSQL(INSERT_MOTOR5)
 }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -62,6 +72,7 @@ override fun onCreate(p0: SQLiteDatabase?) {
 
 
 //login check
+@SuppressLint("Range")
 fun checkLogin(email:String, password:String):Boolean{
     val column = arrayOf(COLUMN_NAMA)
     val db = this.readableDatabase
@@ -75,6 +86,18 @@ fun checkLogin(email:String, password:String):Boolean{
     val cursor = db.query(TABLE_ACCOUNT, column, select, selectArg, null, null, null)
 
     val cursorCount = cursor.count
+    val result : Boolean
+
+    if (cursorCount > 0) {
+        result = true
+
+        if(cursor.moveToFirst()){
+            HomeFragment.nama = cursor.getString(cursor.getColumnIndex(COLUMN_NAMA))
+        }
+    }
+    else {
+        result = false
+    }
     cursor.close()
     db.close()
 
@@ -161,4 +184,6 @@ fun showMotor():ArrayList<MotorModel>{
     return listMotor
 
 }
+
+
 }

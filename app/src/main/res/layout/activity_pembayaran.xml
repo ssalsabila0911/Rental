@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginBottom="49dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,46 +27,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="-27dp"
+            android:layout_marginTop="-30dp"
             android:text="Rental Motor"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="149dp"
-                android:layout_height="121dp"
-                android:src="@drawable/m1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Vespa Biru"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.0"
-                tools:ignore="TextSizeCheck" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -160,16 +126,16 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tgl_Msewa"
-                android:layout_width="134dp"
-                android:layout_height="35dp"
+                android:layout_width="142dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
                 android:hint="21 jan 2023"
                 android:inputType="date"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -198,7 +164,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/jm_mulai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -206,10 +172,11 @@
                 android:layout_marginTop="4dp"
                 android:hint="08:00"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:ignore="TouchTargetSizeCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -233,23 +200,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:text="Tanggal Kembali"
+                android:text="Lama Sewa"
                 android:textColor="#7A7474"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tgl_kembali"
-                android:layout_width="141dp"
-                android:layout_height="33dp"
+            <EditText
+                android:id="@+id/tgl_LamaSewa"
+                android:layout_width="142dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:hint="21 jan 2023"
-                android:inputType="date"
+                android:hint="1 hari"
+                android:inputType="text"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -259,8 +226,9 @@
                 android:id="@+id/imageView5"
                 android:layout_width="33dp"
                 android:layout_height="34dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.314"
+                app:layout_constraintHorizontal_bias="0.422"
                 app:layout_constraintStart_toEndOf="@+id/textView4"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/clock" />
@@ -278,7 +246,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/jm_kembali"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -286,10 +254,11 @@
                 android:layout_marginTop="4dp"
                 android:hint="08:00"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -307,16 +276,60 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/wallet" />
+                app:srcCompat="@drawable/motorcycle" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:text="Metode Pembayaran"
+                android:text="Tipe Motor"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/Tp_Motor"
+                android:layout_width="118dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="12dp"
+                android:hint="Honda Vario"
+                android:inputType="text"
+                android:textColorHint="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.431"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="37dp"
+                android:layout_height="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/wallet" />
+
+            <TextView
+                android:id="@+id/textmetb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Metode Pembayaran"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -330,7 +343,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.431"
                 tools:ignore="TouchTargetSizeCheck" />

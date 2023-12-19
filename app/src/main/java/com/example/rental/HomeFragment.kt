@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,21 +51,26 @@ class HomeFragment : Fragment() {
 
         menuDes.setOnClickListener {
             requireActivity().run {
-                startActivity(Intent(this,DesListActivity::class.java))
+                startActivity(Intent(this, DesListActivity::class.java))
 
             }
         }
 
         menuMaps.setOnClickListener {
             requireActivity().run {
-                startActivity(Intent(this,MapsActivity::class.java))
+                startActivity(Intent(this, MapsActivity::class.java))
             }
         }
+
+        val textNama : TextView = view.findViewById(R.id.NmProfile)
+        textNama.text = nama
 
         return view
     }
 
     companion object {
+        var nama = "nama"
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
