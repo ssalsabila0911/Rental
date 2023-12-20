@@ -74,7 +74,7 @@ override fun onCreate(p0: SQLiteDatabase?) {
 //login check
 @SuppressLint("Range")
 fun checkLogin(email:String, password:String):Boolean{
-    val column = arrayOf(COLUMN_NAMA)
+    val column = arrayOf(COLUMN_NAMA, COLUMN_EMAIL, COLUMN_NOHP, COLUMN_PASSWORD)
     val db = this.readableDatabase
 
 //yang dipilih
@@ -93,6 +93,9 @@ fun checkLogin(email:String, password:String):Boolean{
 
         if(cursor.moveToFirst()){
             HomeFragment.nama = cursor.getString(cursor.getColumnIndex(COLUMN_NAMA))
+
+            AkunFragment.nama = cursor.getString(cursor.getColumnIndex(COLUMN_NAMA))
+            AkunFragment.email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL))
         }
     }
     else {

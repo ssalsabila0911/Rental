@@ -53,7 +53,7 @@
                   tools:ignore="MissingClass" />
 
               <TextView
-                  android:id="@+id/NmProfil"
+                  android:id="@+id/ProfNama"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_gravity="center"
