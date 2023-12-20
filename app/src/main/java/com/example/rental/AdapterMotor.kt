@@ -1,8 +1,10 @@
 package com.example.rental
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -17,6 +19,7 @@ class AdapterMotor(private val listMotor: List<MotorModel>) : RecyclerView.Adapt
         val textTitle: TextView = itemView.findViewById(R.id.textNam)
         val textDesc: TextView = itemView.findViewById(R.id.textDes)
         val context = itemView.context
+        val buttonRent:Button = itemView.findViewById(R.id.buttonRent)
 
         fun bind(data: MotorModel) {
             textNoStnk.text = data.nostnk
@@ -29,7 +32,15 @@ class AdapterMotor(private val listMotor: List<MotorModel>) : RecyclerView.Adapt
             imageMotor.setImageResource(image)
             textTitle.text = data.merktipe
             textDesc.text = "${data.kondisi} - ${data.tahun} - ${data.harga}"
+
+            buttonRent.setOnClickListener {
+                val intent = Intent(itemView.context, PembayaranActivity::class.java)
+                itemView.context.startActivity(intent)
+            }
+
+
         }
+
     }
 
 
