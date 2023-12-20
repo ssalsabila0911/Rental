@@ -82,7 +82,7 @@
               tools:ignore="InefficientWeight">
 
               <LinearLayout
-                  android:id="@+id/tV_akun"
+
                   android:padding="5dp"
                   android:gravity="center_vertical"
                   android:orientation="horizontal"
@@ -96,6 +96,7 @@
                       android:layout_marginStart="20dp"
                       tools:ignore="MissingClass" />
                   <TextView
+                      android:id="@+id/tV_akun"
                       android:layout_weight="1"
                       android:layout_marginStart="10dp"
                       android:textColor="@color/black"
@@ -107,7 +108,7 @@
 
               </LinearLayout>
               <LinearLayout
-                  android:id="@+id/tV_keamanan"
+
                   android:padding="5dp"
                   android:gravity="center_vertical"
                   android:orientation="horizontal"
@@ -121,6 +122,7 @@
                       android:layout_marginStart="20dp"
                       tools:ignore="MissingClass" />
                   <TextView
+                      android:id="@+id/tV_keamanan"
                       android:layout_weight="1"
                       android:textColor="@color/black"
                       android:layout_marginStart="10dp"
@@ -133,7 +135,7 @@
 
               </LinearLayout>
               <LinearLayout
-                  android:id="@+id/tV_bantuan"
+
                   android:padding="5dp"
                   android:gravity="center_vertical"
                   android:orientation="horizontal"
@@ -147,6 +149,7 @@
                       android:layout_marginStart="20dp"
                       tools:ignore="MissingClass" />
                   <TextView
+                      android:id="@+id/tV_bantuan"
                       android:layout_weight="1"
                       android:layout_marginStart="10dp"
                       android:textColor="@color/black"
@@ -160,7 +163,7 @@
               </LinearLayout>
 
               <LinearLayout
-                  android:id="@+id/tV_Sk"
+
                   android:padding="5dp"
                   android:gravity="center_vertical"
                   android:orientation="horizontal"
@@ -174,6 +177,7 @@
                       android:layout_marginStart="20dp"
                       tools:ignore="MissingClass" />
                   <TextView
+                      android:id="@+id/tV_Sk"
                       android:layout_weight="1"
                       android:layout_marginStart="10dp"
                       android:textColor="@color/black"
@@ -186,7 +190,7 @@
 
               </LinearLayout>
               <LinearLayout
-                  android:id="@+id/tV_keluar"
+
                   android:padding="5dp"
                   android:gravity="center_vertical"
                   android:orientation="horizontal"
@@ -200,6 +204,7 @@
                       android:layout_marginStart="20dp"
                       tools:ignore="MissingClass" />
                   <TextView
+                      android:id="@+id/tV_keluar"
                       android:layout_weight="1"
                       android:layout_marginStart="10dp"
                       android:textColor="@color/black"
