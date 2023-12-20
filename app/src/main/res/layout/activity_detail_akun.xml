@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailAkunActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:background="@color/blue">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan Akun"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:fontFamily="@font/poppinssemibold"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="-20dp"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginTop="-30dp"
+            android:background="@drawable/bg_profil"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/bg_rounded"
+            tools:ignore="ExtraText,InefficientWeight">
+
+            <TextView
+                android:id="@+id/EditEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Email           :"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="8dp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingTop="4dp"/>
+
+            <TextView
+                android:id="@+id/EditNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama          :"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingTop="4dp"/>
+
+            <TextView
+                android:id="@+id/EditNohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Nomor Hp   :"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="8dp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingTop="4dp"/>
+
+            <TextView
+                android:id="@+id/EditPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Password    :"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="8dp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingTop="4dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Edit"
+                android:textSize="18sp"
+                android:backgroundTint="@color/primary"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
