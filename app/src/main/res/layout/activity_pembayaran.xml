@@ -61,7 +61,7 @@
                 android:fontFamily="@font/poppinsregular"
                 android:paddingLeft="8dp"
                 android:paddingTop="4dp"
-                android:text="Id User"
+                android:text="Id Rental"
                 android:textSize="13dp"
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
@@ -82,20 +82,20 @@
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/tvIdRent"
+                android:id="@+id/tvIdUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppinsregular"
                 android:paddingLeft="8dp"
                 android:paddingTop="4dp"
-                android:text="Id Rental"
+                android:text="Email User"
                 android:textSize="13dp"
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
             <EditText
-                android:id="@+id/IdRent"
+                android:id="@+id/IdUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

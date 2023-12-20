@@ -33,17 +33,30 @@ companion object{
     private val COLUMN_HARGA = "harga"
     private val COLUMN_GAMBAR_MOTOR = "gambar"
 
+    // tabel rental
+    //private val TABLE_RENTAL = "rental"
+    //private val COLUMN_ID_RENTAL = "idrental"
+    //private val COLUMN_TGL_RENTAL = "tglrental"
+    //private val COLUMN_LAMA_RENTAL = "lamarental"
+    //private val COLUMN_HARGA_RENTAL = "harga"
+    //private val COLUMN_PLAT_MOTOR = "platmotor"
+    //private val COLUMN_EMAIL_USER = "emailuser"
+
 
 }//CREATE
 //tabel akun
 private val CREATE_AKUN_TABLE = ("CREATE TABLE " + TABLE_ACCOUNT + "(" + COLUMN_EMAIL + " TEXT PRIMARY KEY, "+ COLUMN_NAMA +" TEXT, "+ COLUMN_NOHP + " TEXT, "+ COLUMN_PASSWORD +" TEXT)")
 //tabel motor
 private val CREATE_MOTOR_TABLE = ("CREATE TABLE " + TABLE_MOTOR + "(" + COLUMN_NOSTNK + " TEXT PRIMARY KEY, " + COLUMN_NO_MESIN + " TEXT, " + COLUMN_MERK_TIPE + " TEXT, " + COLUMN_TAHUN + " TEXT, " + COLUMN_KONDISI + " TEXT, " + COLUMN_HARGA + " TEXT, "+ COLUMN_GAMBAR_MOTOR + " TEXT)")
+//tabel rental
+//private val CREATE_RENTAL_TABLE = ("CREATE TABLE " + TABLE_RENTAL + "(" + COLUMN_ID_RENTAL + " TEXT PRIMARY KEY, " + COLUMN_TGL_RENTAL + " TEXT, " + COLUMN_LAMA_RENTAL + " TEXT, " + COLUMN_HARGA_RENTAL + " TEXT, " + COLUMN_PLAT_MOTOR + " TEXT, " + COLUMN_EMAIL_USER + " TEXT)")
 //DROP
 //tabel akun
 private val DROP_AKUN_TABLE = "DROP TABLE IF EXISTS $TABLE_ACCOUNT"
 //tabel motor
 private  val DROP_MOTOR_TABLE = "DROP TABLE IF EXISTS $TABLE_MOTOR"
+// tabel rental
+//private val DROP_RENTAL_TABLE = "DROP TABLE IF EXISTS $TABLE_RENTAL"
 
 
 
@@ -62,11 +75,13 @@ override fun onCreate(p0: SQLiteDatabase?) {
     p0?.execSQL(INSERT_MOTOR3)
     p0?.execSQL(INSERT_MOTOR4)
     p0?.execSQL(INSERT_MOTOR5)
+    //p0?.execSQL(CREATE_RENTAL_TABLE)
 }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         p0?.execSQL(DROP_AKUN_TABLE)
         p0?.execSQL(DROP_MOTOR_TABLE)
+        //p0?.execSQL(DROP_RENTAL_TABLE)
         onCreate(p0)
     }
 
@@ -93,9 +108,9 @@ fun checkLogin(email:String, password:String):Boolean{
 
         if(cursor.moveToFirst()){
             HomeFragment.nama = cursor.getString(cursor.getColumnIndex(COLUMN_NAMA))
-
-            AkunFragment.nama = cursor.getString(cursor.getColumnIndex(COLUMN_NAMA))
-            AkunFragment.email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL))
+            HomeFragment.email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL))
+            HomeFragment.nohp = cursor.getString(cursor.getColumnIndex(COLUMN_NOHP))
+            HomeFragment.password = cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD))
         }
     }
     else {
@@ -147,6 +162,25 @@ fun checkData(email:String):String{
     cursor.close()
     db.close()
     return nama
+}
+
+fun updateAkun(menu: AkunModel){
+    val db = this.writableDatabase
+    val values = ContentValues()
+
+    values.put(COLUMN_EMAIL, menu.email)
+    values.put(COLUMN_NAMA, menu.nama)
+    values.put(COLUMN_NOHP, menu.nohp)
+    values.put(COLUMN_PASSWORD, menu.pass)
+
+    val result = db.update(TABLE_ACCOUNT, values, COLUMN_EMAIL + " = ? ", arrayOf(menu.email.toString())).toLong()
+    //
+    if (result==(0).toLong()){
+        Toast.makeText(context, "Edit Gagal", Toast.LENGTH_SHORT).show()
+    } else {
+        Toast.makeText(context, "Edit Berhasil", Toast.LENGTH_SHORT).show()
+    }
+    db.close()
 }
 
 @SuppressLint("Range")

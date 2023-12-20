@@ -68,7 +68,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <TextView
-                android:id="@+id/Email"
+                android:id="@+id/boxEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -94,7 +94,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <TextView
-                android:id="@+id/Nama"
+                android:id="@+id/boxNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -120,7 +120,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <TextView
-                android:id="@+id/Nohp"
+                android:id="@+id/boxNohp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -145,7 +145,7 @@
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
             <TextView
-                android:id="@+id/Password"
+                android:id="@+id/boxPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

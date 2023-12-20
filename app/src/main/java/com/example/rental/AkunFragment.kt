@@ -49,10 +49,10 @@ class AkunFragment : Fragment() {
 
 
         val textNama : TextView = view.findViewById(R.id.ProfNama)
-        textNama.text = AkunFragment.nama
+        textNama.text = HomeFragment.nama
 
         val textEmail : TextView = view.findViewById(R.id.tvEmail)
-        textEmail.text = AkunFragment.email
+        textEmail.text = HomeFragment.email
         return view
     }
 

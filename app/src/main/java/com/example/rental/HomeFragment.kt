@@ -70,6 +70,9 @@ class HomeFragment : Fragment() {
 
     companion object {
         var nama = "nama"
+        var email = "email"
+        var nohp = "nohp"
+        var password = "password"
 
         /**
          * Use this factory method to create a new instance of
