@@ -39,8 +39,6 @@ class AkunFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_akun, container, false)
 
-        //val textNama : TextView = view.findViewById(R.id.NmProfile)
-        //textNama.text = HomeFragment.nama
 
         val textNama : TextView = view.findViewById(R.id.ProfNama)
         textNama.text = AkunFragment.nama
