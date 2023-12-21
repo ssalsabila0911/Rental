@@ -23,6 +23,7 @@ class PembayaranActivity : AppCompatActivity() {
         var lama = 1
         var noPlat = "AB1111"
         var harga = 10000
+        var total = 10000
     }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,11 +37,14 @@ class PembayaranActivity : AppCompatActivity() {
         val textHarga:EditText = findViewById(R.id.Harga)
         val buttonRental:Button = findViewById(R.id.btnRental)
         val textEmail:EditText = findViewById(R.id.IdUser)
+        val textTotal:EditText = findViewById(R.id.TotalRent)
 
         //isi data
         textNoPlat.setText(noPlat.toString())
         textHarga.setText(harga.toString())
         textEmail.setText(HomeFragment.email)
+        total = harga * lama
+        textTotal.setText(total.toString())
 
         buttonRental.setOnClickListener {
             tanggal = textTanggal.text.toString()
@@ -48,6 +52,8 @@ class PembayaranActivity : AppCompatActivity() {
             noPlat = textNoPlat.text.toString()
             harga = textHarga.text.toString().toInt()
             email = textEmail.text.toString()
+
+
 
             val dbHelper = DatabaseHelper(this)
             dbHelper.addRental()

@@ -42,8 +42,8 @@ class OrderFragment : Fragment() {
         rvOrder.layoutManager = LinearLayoutManager(context)
 
         //list data order
-        val dbhelper = DatabaseHelper(this)
-        val dataOrder: List<OrderModel> =
+        val dbHelper = DatabaseHelper(requireContext())
+        val dataOrder = dbHelper.showRental()
 
         //set adapter
         val adapter = AdapterOrder(dataOrder)

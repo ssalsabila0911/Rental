@@ -13,7 +13,7 @@ class DatabaseHelper(var context: Context) : SQLiteOpenHelper(context, DATABASE_
 {
 companion object{
     private val DATABASE_NAME = "rentalmotor"
-    private val DATABASE_VERSION = 5
+    private val DATABASE_VERSION = 6
 
     //tabel akunya
     private val TABLE_ACCOUNT = "akun"
@@ -41,6 +41,7 @@ companion object{
     private val COLUMN_HARGA_RENTAL = "harga"
     private val COLUMN_PLAT_MOTOR = "platmotor"
     private val COLUMN_EMAIL_USER = "emailuser"
+    private val COLUMN_TOTAL_BAYAR = "totalbayar"
 
 
 }//CREATE
@@ -49,7 +50,7 @@ private val CREATE_AKUN_TABLE = ("CREATE TABLE " + TABLE_ACCOUNT + "(" + COLUMN_
 //tabel motor
 private val CREATE_MOTOR_TABLE = ("CREATE TABLE " + TABLE_MOTOR + "(" + COLUMN_NOSTNK + " TEXT PRIMARY KEY, " + COLUMN_NO_MESIN + " TEXT, " + COLUMN_MERK_TIPE + " TEXT, " + COLUMN_TAHUN + " TEXT, " + COLUMN_KONDISI + " TEXT, " + COLUMN_HARGA + " INT, "+ COLUMN_GAMBAR_MOTOR + " TEXT)")
 //tabel rental
-private val CREATE_RENTAL_TABLE = ("CREATE TABLE " + TABLE_RENTAL + "(" + COLUMN_ID_RENTAL + " INT PRIMARY KEY, " + COLUMN_TGL_RENTAL + " TEXT, " + COLUMN_LAMA_RENTAL + " INT, " + COLUMN_HARGA_RENTAL + " INT, " + COLUMN_PLAT_MOTOR + " TEXT, " + COLUMN_EMAIL_USER + " TEXT)")
+private val CREATE_RENTAL_TABLE = ("CREATE TABLE " + TABLE_RENTAL + "(" + COLUMN_ID_RENTAL + " INT PRIMARY KEY, " + COLUMN_TGL_RENTAL + " TEXT, " + COLUMN_LAMA_RENTAL + " INT, " + COLUMN_HARGA_RENTAL + " INT, " + COLUMN_PLAT_MOTOR + " TEXT, " + COLUMN_EMAIL_USER + " TEXT, " + COLUMN_TOTAL_BAYAR + " INT)")
 //DROP
 //tabel akun
 private val DROP_AKUN_TABLE = "DROP TABLE IF EXISTS $TABLE_ACCOUNT"
@@ -174,12 +175,12 @@ fun updateAkun(menu: AkunModel){
     values.put(COLUMN_NOHP, menu.nohp)
     values.put(COLUMN_PASSWORD, menu.pass)
 
-    val result = db.update(TABLE_ACCOUNT, values, COLUMN_EMAIL + " = ? ", arrayOf(menu.email.toString())).toLong()
+    val result = db.update(TABLE_ACCOUNT, values, COLUMN_EMAIL + " = ? ", arrayOf(menu.email)).toLong()
     //
     if (result==(0).toLong()){
-        Toast.makeText(context, "Edit Gagal", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Data Gagal Diperbaharui", Toast.LENGTH_SHORT).show()
     } else {
-        Toast.makeText(context, "Edit Berhasil", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Data Berhasil Diperbaharui", Toast.LENGTH_SHORT).show()
     }
     db.close()
 }
@@ -248,6 +249,7 @@ fun showMotor():ArrayList<MotorModel>{
         values.put(COLUMN_HARGA_RENTAL, PembayaranActivity.harga)
         values.put(COLUMN_PLAT_MOTOR, PembayaranActivity.noPlat)
         values.put(COLUMN_EMAIL_USER, HomeFragment.email)
+        values.put(COLUMN_TOTAL_BAYAR, PembayaranActivity.total)
 
         // Insert data rental
         val result = dbInsert.insert(TABLE_RENTAL, null, values)
@@ -261,6 +263,40 @@ fun showMotor():ArrayList<MotorModel>{
 
         dbInsert.close()
         dbSelect.close()
+    }
+
+    @SuppressLint("Range")
+    fun showRental():ArrayList<OrderModel>{
+        val listModel = ArrayList<OrderModel>()
+        val db = this.readableDatabase
+        var cursor:Cursor?=null
+        try {
+            cursor = db.rawQuery("SELECT * FROM " + TABLE_RENTAL,null)
+        }catch (se:SQLException){
+            db.execSQL(CREATE_RENTAL_TABLE)
+            return ArrayList()
+        }
+
+        var id : Int
+        var noplat : String
+        var tanggal : String
+        var lama : String
+        var totalharga : Int
+
+        if (cursor.moveToFirst()) {
+            do {
+                //get data
+                id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID_RENTAL))
+                noplat = cursor.getString(cursor.getColumnIndex(COLUMN_PLAT_MOTOR))
+                tanggal = cursor.getString(cursor.getColumnIndex(COLUMN_TGL_RENTAL))
+                lama = cursor.getString(cursor.getColumnIndex(COLUMN_LAMA_RENTAL))
+                totalharga = cursor.getInt(cursor.getColumnIndex(COLUMN_TOTAL_BAYAR))
+
+                val model = OrderModel(id=id, noplat=noplat, tanggal=tanggal, lama=lama, totalharga=totalharga)
+                listModel.add(model)
+            } while (cursor.moveToNext())
+        }
+        return listModel
     }
 
 

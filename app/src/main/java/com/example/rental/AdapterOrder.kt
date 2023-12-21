@@ -3,6 +3,7 @@ package com.example.rental
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
@@ -11,6 +12,7 @@ class AdapterOrder(private val listOrder: List<OrderModel>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //
+        val txtIdRental : TextView = itemView.findViewById(R.id.tvIdRental)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

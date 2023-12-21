@@ -36,6 +36,7 @@ class DetailAkunActivity : AppCompatActivity() {
             EditAkunActivity.password = textPass.text.toString()
             val editIntent = Intent(this,EditAkunActivity::class.java)
             startActivity(editIntent)
+
         }
 
         btnKembali.setOnClickListener {
@@ -44,25 +45,5 @@ class DetailAkunActivity : AppCompatActivity() {
         }
     }
 
-   // @SuppressLint("MissingInflatedId")
-    //override fun onCreateView(
-      //  inflater: LayoutInflater, container: ViewGroup?,
-        //savedInstanceState: Bundle?
-    //): View? {
-      //  val view = inflater.inflate(R.layout.activity_detail_akun, container, false)
-
-        //val textNama : TextView = view.findViewById(R.id.boxNama)
-       // textNama.text = HomeFragment.nama
-
-       // val textEmail : TextView = view.findViewById(R.id.boxEmail)
-        // textEmail.text = HomeFragment.email
-
-       // val textNoHp : TextView = view.findViewById(R.id.boxNohp)
-       // textNoHp.text = HomeFragment.nohp
-
-       // val textPass : TextView = view.findViewById(R.id.boxPassword)
-       // textPass.text = HomeFragment.password
-       // return view
-   // }
 
 }
