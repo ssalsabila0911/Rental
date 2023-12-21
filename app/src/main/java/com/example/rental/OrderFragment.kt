@@ -1,10 +1,12 @@
 package com.example.rental
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,21 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false)
+        val view = inflater.inflate(R.layout.fragment_order, container, false)
+        val rvOrder: RecyclerView = view.findViewById(R.id.recyclerOrder)
+        //set layout manager di RecyclerView
+        rvOrder.layoutManager = LinearLayoutManager(context)
+
+        //list data order
+        val dbhelper = DatabaseHelper(this)
+        val dataOrder: List<OrderModel> =
+
+        //set adapter
+        val adapter = AdapterOrder(dataOrder)
+        //set adapter ke recyclerView
+        rvOrder.adapter = adapter
+
+        return view
     }
 
     companion object {

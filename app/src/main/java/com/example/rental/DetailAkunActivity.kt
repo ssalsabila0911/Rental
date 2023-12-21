@@ -3,13 +3,10 @@ package com.example.rental
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import org.w3c.dom.Text
 
 class DetailAkunActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -30,6 +27,7 @@ class DetailAkunActivity : AppCompatActivity() {
 
 
         val btnEdit : Button = findViewById(R.id.btnEdit)
+        val btnKembali:ImageView =findViewById(R.id.btnBack)
 
         btnEdit.setOnClickListener{
             EditAkunActivity.email = textEmail.text.toString()
@@ -38,6 +36,11 @@ class DetailAkunActivity : AppCompatActivity() {
             EditAkunActivity.password = textPass.text.toString()
             val editIntent = Intent(this,EditAkunActivity::class.java)
             startActivity(editIntent)
+        }
+
+        btnKembali.setOnClickListener {
+            val intent = Intent(this,AkunFragment::class.java)
+            startActivity(intent)
         }
     }
 

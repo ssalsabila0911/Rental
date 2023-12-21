@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,7 @@ class EditAkunActivity : AppCompatActivity() {
         val textNoHp : TextView = findViewById(R.id.EditNohp)
         val textPass : TextView = findViewById(R.id.EditPassword)
         val btnSimpan : Button = findViewById(R.id.btnSimpan)
+        val btnKembali:ImageView = findViewById(R.id.btnBack)
 
         //input
         textEmail.text = email.toString()
@@ -51,6 +53,11 @@ class EditAkunActivity : AppCompatActivity() {
 
 
             val intent = Intent(this, DetailAkunActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnKembali.setOnClickListener {
+            val intent = Intent(this,DetailAkunActivity::class.java)
             startActivity(intent)
         }
     }
