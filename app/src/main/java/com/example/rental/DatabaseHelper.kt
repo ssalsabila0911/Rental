@@ -13,7 +13,7 @@ class DatabaseHelper(var context: Context) : SQLiteOpenHelper(context, DATABASE_
 {
 companion object{
     private val DATABASE_NAME = "rentalmotor"
-    private val DATABASE_VERSION = 3
+    private val DATABASE_VERSION = 5
 
     //tabel akunya
     private val TABLE_ACCOUNT = "akun"
@@ -34,22 +34,22 @@ companion object{
     private val COLUMN_GAMBAR_MOTOR = "gambar"
 
     // tabel rental
-    //private val TABLE_RENTAL = "rental"
-    //private val COLUMN_ID_RENTAL = "idrental"
-    //private val COLUMN_TGL_RENTAL = "tglrental"
-    //private val COLUMN_LAMA_RENTAL = "lamarental"
-    //private val COLUMN_HARGA_RENTAL = "harga"
-    //private val COLUMN_PLAT_MOTOR = "platmotor"
-    //private val COLUMN_EMAIL_USER = "emailuser"
+    private val TABLE_RENTAL = "rental"
+    private val COLUMN_ID_RENTAL = "idrental"
+    private val COLUMN_TGL_RENTAL = "tglrental"
+    private val COLUMN_LAMA_RENTAL = "lamarental"
+    private val COLUMN_HARGA_RENTAL = "harga"
+    private val COLUMN_PLAT_MOTOR = "platmotor"
+    private val COLUMN_EMAIL_USER = "emailuser"
 
 
 }//CREATE
 //tabel akun
 private val CREATE_AKUN_TABLE = ("CREATE TABLE " + TABLE_ACCOUNT + "(" + COLUMN_EMAIL + " TEXT PRIMARY KEY, "+ COLUMN_NAMA +" TEXT, "+ COLUMN_NOHP + " TEXT, "+ COLUMN_PASSWORD +" TEXT)")
 //tabel motor
-private val CREATE_MOTOR_TABLE = ("CREATE TABLE " + TABLE_MOTOR + "(" + COLUMN_NOSTNK + " TEXT PRIMARY KEY, " + COLUMN_NO_MESIN + " TEXT, " + COLUMN_MERK_TIPE + " TEXT, " + COLUMN_TAHUN + " TEXT, " + COLUMN_KONDISI + " TEXT, " + COLUMN_HARGA + " TEXT, "+ COLUMN_GAMBAR_MOTOR + " TEXT)")
+private val CREATE_MOTOR_TABLE = ("CREATE TABLE " + TABLE_MOTOR + "(" + COLUMN_NOSTNK + " TEXT PRIMARY KEY, " + COLUMN_NO_MESIN + " TEXT, " + COLUMN_MERK_TIPE + " TEXT, " + COLUMN_TAHUN + " TEXT, " + COLUMN_KONDISI + " TEXT, " + COLUMN_HARGA + " INT, "+ COLUMN_GAMBAR_MOTOR + " TEXT)")
 //tabel rental
-//private val CREATE_RENTAL_TABLE = ("CREATE TABLE " + TABLE_RENTAL + "(" + COLUMN_ID_RENTAL + " TEXT PRIMARY KEY, " + COLUMN_TGL_RENTAL + " TEXT, " + COLUMN_LAMA_RENTAL + " TEXT, " + COLUMN_HARGA_RENTAL + " TEXT, " + COLUMN_PLAT_MOTOR + " TEXT, " + COLUMN_EMAIL_USER + " TEXT)")
+private val CREATE_RENTAL_TABLE = ("CREATE TABLE " + TABLE_RENTAL + "(" + COLUMN_ID_RENTAL + " INT PRIMARY KEY, " + COLUMN_TGL_RENTAL + " TEXT, " + COLUMN_LAMA_RENTAL + " INT, " + COLUMN_HARGA_RENTAL + " INT, " + COLUMN_PLAT_MOTOR + " TEXT, " + COLUMN_EMAIL_USER + " TEXT)")
 //DROP
 //tabel akun
 private val DROP_AKUN_TABLE = "DROP TABLE IF EXISTS $TABLE_ACCOUNT"
@@ -57,7 +57,7 @@ private val DROP_AKUN_TABLE = "DROP TABLE IF EXISTS $TABLE_ACCOUNT"
 private  val DROP_MOTOR_TABLE = "DROP TABLE IF EXISTS $TABLE_MOTOR"
 
 // tabel rental
-//private val DROP_RENTAL_TABLE = "DROP TABLE IF EXISTS $TABLE_RENTAL"
+private val DROP_RENTAL_TABLE = "DROP TABLE IF EXISTS $TABLE_RENTAL"
 
 
 
@@ -76,13 +76,13 @@ override fun onCreate(p0: SQLiteDatabase?) {
     p0?.execSQL(INSERT_MOTOR3)
     p0?.execSQL(INSERT_MOTOR4)
     p0?.execSQL(INSERT_MOTOR5)
-    //p0?.execSQL(CREATE_RENTAL_TABLE)
+    p0?.execSQL(CREATE_RENTAL_TABLE)
 }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         p0?.execSQL(DROP_AKUN_TABLE)
         p0?.execSQL(DROP_MOTOR_TABLE)
-        //p0?.execSQL(DROP_RENTAL_TABLE)
+        p0?.execSQL(DROP_RENTAL_TABLE)
         onCreate(p0)
     }
 
@@ -201,7 +201,7 @@ fun showMotor():ArrayList<MotorModel>{
     var merktipe: String
     var tahun: String
     var kondisi: String
-    var harga: String
+    var harga: Int
     var gambar: String
 
     if(cursor.moveToFirst()){
@@ -211,7 +211,7 @@ fun showMotor():ArrayList<MotorModel>{
             merktipe = cursor.getString(cursor.getColumnIndex(COLUMN_MERK_TIPE))
             tahun = cursor.getString(cursor.getColumnIndex(COLUMN_TAHUN))
             kondisi = cursor.getString(cursor.getColumnIndex(COLUMN_KONDISI))
-            harga = cursor.getString(cursor.getColumnIndex(COLUMN_HARGA))
+            harga = cursor.getInt(cursor.getColumnIndex(COLUMN_HARGA))
 
             gambar = cursor.getString(cursor.getColumnIndex(COLUMN_GAMBAR_MOTOR))
 
@@ -222,6 +222,47 @@ fun showMotor():ArrayList<MotorModel>{
     return listMotor
 
 }
+
+    @SuppressLint("Range")
+    fun addRental() {
+        val dbInsert = this.writableDatabase
+        val dbSelect = this.readableDatabase
+        // Declare variable
+        var lastIdRental = 0
+        var newIdRental = 0
+
+        // Get last idRental
+        val cursorRental: Cursor = dbSelect.rawQuery("SELECT * FROM $TABLE_RENTAL", null)
+
+        if (cursorRental.moveToLast()) {
+            lastIdRental = cursorRental.getInt(0) // To get id, 0 is the column index
+        }
+
+        // Set data
+        newIdRental = lastIdRental + 1
+
+        val values = ContentValues()
+        values.put(COLUMN_ID_RENTAL, newIdRental)
+        values.put(COLUMN_TGL_RENTAL, PembayaranActivity.tanggal)
+        values.put(COLUMN_LAMA_RENTAL, PembayaranActivity.lama)
+        values.put(COLUMN_HARGA_RENTAL, PembayaranActivity.harga)
+        values.put(COLUMN_PLAT_MOTOR, PembayaranActivity.noPlat)
+        values.put(COLUMN_EMAIL_USER, HomeFragment.email)
+
+        // Insert data rental
+        val result = dbInsert.insert(TABLE_RENTAL, null, values)
+
+        // Show message
+        if (result == (-1).toLong()) {
+            Toast.makeText(context, "Peminjaman Gagal", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Peminjaman Berhasil", Toast.LENGTH_SHORT).show()
+        }
+
+        dbInsert.close()
+        dbSelect.close()
+    }
+
 
 
 }

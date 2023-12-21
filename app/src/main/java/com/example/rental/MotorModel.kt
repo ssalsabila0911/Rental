@@ -6,5 +6,5 @@ data class MotorModel(
     val merktipe: String,
     val tahun: String,
     val kondisi: String,
-    val harga: String,
+    val harga: Int,
     val gambar: String)  //nama file : bg_foto.png

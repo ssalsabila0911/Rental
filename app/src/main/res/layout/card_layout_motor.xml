@@ -20,7 +20,6 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_marginEnd="5dp"
             android:layout_weight="1">
             <TextView
                 android:id="@+id/textNoStnk"
@@ -29,11 +28,9 @@
                 android:visibility="invisible"/>
             <ImageView
                 android:id="@+id/imageViewMotor"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginEnd="20dp"
                 app:srcCompat="@drawable/m1" />
 
         </LinearLayout>
@@ -64,11 +61,20 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textKondisi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Lorem ipsum "
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
                 android:id="@+id/textDes"
                 android:layout_width="wrap_content"
-                android:layout_height="49dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Lorem ipsum Dolor sit Amet \nLorem"
+                android:text="Lorem ipsum "
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -76,7 +82,7 @@
                 android:id="@+id/buttonRent"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="127dp"
+                android:layout_marginStart="115dp"
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="@color/primary"
                 android:minHeight="48dp"

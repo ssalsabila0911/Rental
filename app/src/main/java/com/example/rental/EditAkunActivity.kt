@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class EditAkunActivity : AppCompatActivity() {
@@ -45,6 +46,7 @@ class EditAkunActivity : AppCompatActivity() {
             val pass : String = textPass.toString()
 
             val updateAkun = AkunModel(email, nama, nohp, pass)
+            Toast.makeText(this,updateAkun.nama + " - " + updateAkun.email, Toast.LENGTH_SHORT).show()
             dbhelper.updateAkun(updateAkun)
 
 

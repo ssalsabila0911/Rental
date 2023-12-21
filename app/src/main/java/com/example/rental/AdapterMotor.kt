@@ -18,6 +18,7 @@ class AdapterMotor(private val listMotor: List<MotorModel>) : RecyclerView.Adapt
         val imageMotor: ImageView = itemView.findViewById(R.id.imageViewMotor)
         val textTitle: TextView = itemView.findViewById(R.id.textNam)
         val textDesc: TextView = itemView.findViewById(R.id.textDes)
+        val textKodisi: TextView = itemView.findViewById(R.id.textKondisi)
         val context = itemView.context
         val buttonRent:Button = itemView.findViewById(R.id.buttonRent)
 
@@ -31,9 +32,12 @@ class AdapterMotor(private val listMotor: List<MotorModel>) : RecyclerView.Adapt
             //Toast.makeText(context, image.toString(),Toast.LENGTH_SHORT).show()
             imageMotor.setImageResource(image)
             textTitle.text = data.merktipe
-            textDesc.text = "${data.kondisi} - ${data.tahun} - ${data.harga}"
+            textDesc.text = data.harga.toString()
+            textKodisi.text = "${data.kondisi} - ${data.tahun}"
 
             buttonRent.setOnClickListener {
+                PembayaranActivity.noPlat = textNoStnk.text.toString()
+                PembayaranActivity.harga = textDesc.text.toString().toInt()
                 val intent = Intent(itemView.context, PembayaranActivity::class.java)
                 itemView.context.startActivity(intent)
             }

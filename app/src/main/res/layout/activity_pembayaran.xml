@@ -53,117 +53,6 @@
             android:background="@drawable/bg_rounded"
             tools:ignore="ExtraText,InefficientWeight">
 
-            <TextView
-                android:id="@+id/tvIdUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text="Id Rental"
-                android:textSize="13dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
-            <EditText
-                android:id="@+id/IdUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/tvIdUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text="Email User"
-                android:textSize="13dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
-            <EditText
-                android:id="@+id/IdUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/tvTglRent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text="Tanggal Rental "
-                android:textSize="13dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
-            <EditText
-                android:id="@+id/TglRent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:id="@+id/tvLamaRent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text="Lama Rental"
-                android:textSize="13dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
-            <EditText
-                android:id="@+id/LamaRent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/tvNoplat"
@@ -178,20 +67,33 @@
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
-            <EditText
-                android:id="@+id/Noplat"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editnoplat"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
-                android:paddingLeft="8dp"
-                android:paddingTop="4dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                android:layout_marginTop="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <EditText
+                    android:id="@+id/Noplat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:inputType="text"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:enabled="false"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/tvHarga"
@@ -206,24 +108,158 @@
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
-            <EditText
-                android:id="@+id/Harga"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editHarga"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <EditText
+                    android:id="@+id/Harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:inputType="text"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:enabled="false"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvIdUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
                 android:paddingLeft="8dp"
                 android:paddingTop="4dp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="18dp"
+                android:text="Email User"
+                android:textSize="13dp"
                 android:textStyle="bold"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                tools:ignore="TextSizeCheck" />
 
-            <Button
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editIdUser"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:endIconMode="clear_text">
+
+                <EditText
+                    android:id="@+id/IdUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:inputType="text"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvTglSewa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:text="Tanggal Sewa"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TglRental"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <EditText
+                    android:id="@+id/TglRent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/calendar"
+                    android:inputType="date"
+                    android:textColor="@color/black"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvLamaRent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:text="Lama Rental"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editlamaSewa"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:endIconMode="clear_text">
+
+                <EditText
+                    android:id="@+id/LamaRent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:inputType="text"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btnRental"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:text="Rental"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
