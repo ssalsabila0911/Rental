@@ -33,7 +33,7 @@ class DetailAkunActivity : AppCompatActivity() {
 
 
         val btnEdit : Button = findViewById(R.id.btnEdit)
-        val btnKembali:ImageView =findViewById(R.id.btnBack)
+        val btnKem: ImageView = findViewById(R.id.btnBack)
 
         btnEdit.setOnClickListener{
             EditAkunActivity.email = textEmail.text.toString()
@@ -45,9 +45,8 @@ class DetailAkunActivity : AppCompatActivity() {
 
         }
 
-        btnKembali.setOnClickListener {
-
-            val intent = Intent(this,AkunFragment::class.java)
+        btnKem.setOnClickListener {
+            val intent = Intent(this,HomeFragment::class.java)
             startActivity(intent)
         }
     }

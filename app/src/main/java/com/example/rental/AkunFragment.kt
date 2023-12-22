@@ -3,11 +3,11 @@ package com.example.rental
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,10 +40,17 @@ class AkunFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_akun, container, false)
         val btnAkun : TextView = view. findViewById(R.id.tV_akun)
+        val btnkeluar:TextView = view.findViewById(R.id.tV_keluar)
 
         btnAkun.setOnClickListener{
             requireActivity().run {
                 startActivity(Intent(this,DetailAkunActivity::class.java))
+            }
+        }
+
+        btnkeluar.setOnClickListener {
+            requireActivity().run{
+                startActivity(Intent(this,LoginActivity::class.java))
             }
         }
 
