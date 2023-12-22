@@ -69,6 +69,7 @@ class EditAkunActivity : AppCompatActivity() {
         HomeFragment.nohp = nohp
         HomeFragment.password = password
 
+
         val intent = Intent(this, DetailAkunActivity::class.java)
         startActivity(intent)
     }
