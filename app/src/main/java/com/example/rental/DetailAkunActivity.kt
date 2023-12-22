@@ -9,6 +9,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class DetailAkunActivity : AppCompatActivity() {
+    companion object{
+        var nama = ""
+        var email = ""
+        var nohp = ""
+        var password = ""
+    }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +46,7 @@ class DetailAkunActivity : AppCompatActivity() {
         }
 
         btnKembali.setOnClickListener {
+
             val intent = Intent(this,AkunFragment::class.java)
             startActivity(intent)
         }

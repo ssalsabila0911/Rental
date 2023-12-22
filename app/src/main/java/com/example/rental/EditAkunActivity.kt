@@ -41,24 +41,36 @@ class EditAkunActivity : AppCompatActivity() {
 
         //event btn simpan
         btnSimpan.setOnClickListener{
-            val dbhelper = DatabaseHelper(this)
-
-            val email : String = textEmail.text.toString()
-            val nama : String = textNama.text.toString()
-            val nohp : String = textNoHp.text.toString()
-            val pass : String = textPass.text.toString()
-
-            val updateAkun = AkunModel(email, nama, nohp, pass)
-            dbhelper.updateAkun(updateAkun)
-
-            val intent = Intent(this, DetailAkunActivity::class.java)
-            startActivity(intent)
+            updateAkun()
         }
+
+
 
         btnKembali.setOnClickListener {
             val intent = Intent(this,DetailAkunActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun updateAkun(){
+        val dbhelper = DatabaseHelper(this)
+
+        val email : String = findViewById<EditText>(R.id.EditEmail).text.toString().trim()
+        val nama : String = findViewById<EditText>(R.id.EditNama).text.toString().trim()
+        val nohp : String = findViewById<EditText>(R.id.EditNohp).text.toString().trim()
+        val pass : String = findViewById<EditText>(R.id.EditPassword).text.toString().trim()
+
+        val updateAkun = AkunModel(email, nama, nohp, pass)
+        dbhelper.updateAkun(updateAkun)
+
+        //update
+        HomeFragment.email = email
+        HomeFragment.nama = nama
+        HomeFragment.nohp = nohp
+        HomeFragment.password = password
+
+        val intent = Intent(this, DetailAkunActivity::class.java)
+        startActivity(intent)
     }
 
 

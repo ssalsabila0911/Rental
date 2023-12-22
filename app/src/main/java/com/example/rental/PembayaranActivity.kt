@@ -21,7 +21,7 @@ class PembayaranActivity : AppCompatActivity() {
     companion object{
         var tanggal = ""
         var lama = 1
-        var noPlat = "AB1111"
+        var noPlat = ""
         var harga = 10000
         var total = 10000
     }
@@ -40,11 +40,9 @@ class PembayaranActivity : AppCompatActivity() {
         val textTotal:EditText = findViewById(R.id.TotalRent)
 
         //isi data
-        textNoPlat.setText(noPlat.toString())
+        textNoPlat.setText(noPlat)
         textHarga.setText(harga.toString())
         textEmail.setText(HomeFragment.email)
-        total = harga * lama
-        textTotal.setText(total.toString())
 
         buttonRental.setOnClickListener {
             tanggal = textTanggal.text.toString()
@@ -52,6 +50,7 @@ class PembayaranActivity : AppCompatActivity() {
             noPlat = textNoPlat.text.toString()
             harga = textHarga.text.toString().toInt()
             email = textEmail.text.toString()
+            total = textTotal.text.toString().toInt()
 
 
 
